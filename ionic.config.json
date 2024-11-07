@@ -1,0 +1,7 @@
+{
+  "name": "challenge-tcit",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
