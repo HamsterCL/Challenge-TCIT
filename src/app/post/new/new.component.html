@@ -7,7 +7,7 @@
   <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-input label="Nombre" label-placement="floating" placeholder="Ingrese Nombre" maxlength="15" formControlName="username" required></ion-input>
+          <ion-input label="Nombre" label-placement="floating" placeholder="Ingrese Nombre" maxlength="15" formControlName="name" required></ion-input>
         </ion-item>
         <br />
         <ion-item>
@@ -16,11 +16,25 @@
       </ion-list>
   </ion-card-content>
     <div class="center">
-      <ion-button>Agregar</ion-button>
+      <ion-button (click)="onSavePost()">Agregar</ion-button>
     </div>
   </form>
   <br />
 </ion-card>
+
+<ion-alert
+  [isOpen]="isAlertOpen"
+  header="Agregar Post"
+  message="Debe llenar todo los datos del formulario"
+  [buttons]="alertButtons"
+></ion-alert>
+
+<ion-alert
+  [isOpen]="isAlertOKOpen"
+  header="Agregar Post"
+  message="El post fue agregado correctamente!"
+  [buttons]="alertButtons"
+></ion-alert>
 
 
 

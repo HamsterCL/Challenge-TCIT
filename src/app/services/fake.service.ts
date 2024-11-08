@@ -93,8 +93,8 @@ export class FakeService {
 
   // Crear nuevo post
   public addPost(post: Post): Observable<Post> {
-    const newPost = { ...post, _id: this.getRandomInt(2) };
-    this.data.push(newPost);
+    const newPost = { ...post, _id: this.getRandomInt(9999) };
+    this.data = [...this.data, newPost]
     return of(newPost).pipe(delay(1000));
   }
 
