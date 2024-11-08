@@ -6,6 +6,7 @@ import { DeleteComponent } from "./delete/delete.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NewComponent } from "./new/new.component";
 import { FilterComponent } from "./filter/filter.component";
+import {FilterNamePipe} from "../pipe/filter-name.pipe";
 
 @NgModule({
   declarations: [ListComponent, DeleteComponent, NewComponent, FilterComponent],
@@ -19,7 +20,8 @@ import { FilterComponent } from "./filter/filter.component";
     CommonModule,
     IonicModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FilterNamePipe
   ]
 })
 export class PostModule { }
