@@ -1,0 +1,27 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Nuevo Post</ion-card-title>
+    <ion-card-subtitle></ion-card-subtitle>
+  </ion-card-header>
+  <form [formGroup]="userForm">
+  <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input label="Nombre" label-placement="floating" placeholder="Ingrese Nombre" maxlength="15" formControlName="username" required></ion-input>
+        </ion-item>
+        <br />
+        <ion-item>
+          <ion-input label="Descripción" labelPlacement="floating" placeholder="Ingrese Descripción de su Trabajo" maxlength="30" formControlName="description" required></ion-input>
+        </ion-item>
+      </ion-list>
+  </ion-card-content>
+    <div class="center">
+      <ion-button>Agregar</ion-button>
+    </div>
+  </form>
+  <br />
+</ion-card>
+
+
+
+

@@ -1,0 +1,22 @@
+ion-col {
+  background-color: #F3F3F3;
+  border: solid 1px #6E6C6CFF;
+  color: #000000;
+  text-align: center;
+}
+
+ion-grid {
+  --ion-grid-padding: 0px;
+  ion-row {
+    padding: 2px;
+  }
+
+  ion-col {
+    padding: 2px;
+  }
+
+  .col-top-left {     padding-right: 8px; padding-bottom: 8px; }
+  .col-top-right {    padding-left: 8px; padding-bottom: 8px; }
+  .col-bottom-left {  padding-right: 8px; padding-top: 8px; }
+  .col-bottom-right { padding-left: 8px; padding-top: 8px; }
+}

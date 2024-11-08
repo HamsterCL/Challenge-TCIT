@@ -1,18 +1,40 @@
 import { createReducer, on } from '@ngrx/store';
-import * as PostActions from '../actions/post.actions';
+import * as PostActions from '../action/post.action';
 
-export interface DataState {
-  data: any;
+export interface PostState {
+  posts: any[];
   error: any;
 }
 
-const initialState: DataState = {
-  data: null,
+export const initialState: PostState = {
+  posts: [],
   error: null,
 };
 
-export const dataReducer = createReducer(
+export const postReducer = createReducer(
   initialState,
-  on(PostActions.loadDataSuccess, (state, { data }) => ({ ...state, data })),
-  on(PostActions.loadDataFailure, (state, { error }) => ({ ...state, error }))
+  on(PostActions.loadPostsSuccess, (state, { posts }) => ({
+    ...state,
+    posts,
+  })),
+  on(PostActions.loadPostsFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
+  on(PostActions.deletePostSuccess, (state, { id }) => ({
+    ...state,
+    posts: state.posts.filter(post => post._id !== id)
+  })),
+  on(PostActions.deletePostFailure, (state, { error }) => ({
+    ...state,
+    error
+  })),
+  on(PostActions.addPostSuccess, (state, { post }) => ({
+    ...state,
+    posts: [...state.posts, post]
+  })),
+  on(PostActions.addPostFailure, (state, { error }) => ({
+    ...state,
+    error
+  }))
 );

@@ -1,0 +1,28 @@
+<ion-grid *ngIf="(posts$ | async) as posts">
+  <ion-row>
+    <ion-col style="width:45%">Nombre</ion-col>
+    <ion-col style="width:45%">Descripción</ion-col>
+    <ion-col style="width:10%">Acción</ion-col>
+  </ion-row>
+  <ion-row *ngFor="let post of posts">
+    <ion-col class="sm">Nombre : {{ post?.name }}</ion-col>
+    <ion-col style="width:45%">Descripción : {{ post?.description }}</ion-col>
+    <ion-col style="width:10%">
+      <ion-icon id="button-delete" name="remove-circle-sharp" (click)="onSetQuestionsOpen(true, post?._id)"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid *ngIf="!(posts$ | async)?.length">
+  <ion-row>
+    <ion-col>No hay publicaciones disponibles.</ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-alert
+  [isOpen]="isAlertOpen"
+  header="Eliminar Post"
+  message="¿Está seguro de eliminar este post?"
+  [buttons]="alertButtons"
+  (didDismiss)="onSetQuestionsOpen(false, 0)"
+></ion-alert>
+

@@ -7,19 +7,6 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent  {
 
-  accountPages = [
-    {
-      title: 'Log In',
-      url: '/auth/login',
-      ionicIcon: 'log-in-outline'
-    },
-    {
-      title: 'Sign Up',
-      url: '/auth/signup',
-      ionicIcon: 'person-add-outline'
-    }
-  ]
-
   constructor() { }
 
 }
