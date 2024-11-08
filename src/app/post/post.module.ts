@@ -5,13 +5,15 @@ import { IonicModule } from "@ionic/angular";
 import { DeleteComponent } from "./delete/delete.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NewComponent } from "./new/new.component";
+import { FilterComponent } from "./filter/filter.component";
 
 @NgModule({
-  declarations: [ListComponent, DeleteComponent, NewComponent],
+  declarations: [ListComponent, DeleteComponent, NewComponent, FilterComponent],
   exports: [
     ListComponent,
     DeleteComponent,
     NewComponent,
+    FilterComponent,
   ],
   imports: [
     CommonModule,

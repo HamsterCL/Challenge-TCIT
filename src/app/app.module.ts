@@ -12,6 +12,7 @@ import { PostModule } from "./post/post.module";
 import { FooterModule } from "./footer/footer.module";
 import { postReducer } from "./post/state/reduce/post.reduce";
 import { PostEffect } from "./post/state/effect/post.effect";
+import { FilterNamePipe } from "./pipe/filter-name.pipe";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,12 +20,14 @@ import { PostEffect } from "./post/state/effect/post.effect";
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    StoreModule.forRoot({ post: postReducer }),
+    StoreModule.forRoot({post: postReducer}),
     EffectsModule.forRoot([PostEffect]),
     PostModule,
-    FooterModule
+    FooterModule,
+    FilterNamePipe,
+
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FilterNamePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

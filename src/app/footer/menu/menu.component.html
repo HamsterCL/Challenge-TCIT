@@ -29,17 +29,15 @@
         <app-list></app-list>
       </ion-content>
   </ion-tab>
-  <ion-tab tab="search">
-    <div id="search-page">
+  <ion-tab tab="filter">
       <ion-header>
         <ion-toolbar>
-          <ion-title>Search</ion-title>
+          <ion-title>Filtrar ppor Nombre</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <div class="example-content">Search content</div>
+        <app-filter></app-filter>
       </ion-content>
-    </div>
   </ion-tab>
 
   <ion-tab-bar slot="bottom">
@@ -55,7 +53,7 @@
       <ion-icon name="list-circle-outline"></ion-icon>
       Listar
     </ion-tab-button>
-    <ion-tab-button tab="search">
+    <ion-tab-button tab="filter">
       <ion-icon name="filter-circle-outline"></ion-icon>
       Filtrar
     </ion-tab-button>
